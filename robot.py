@@ -61,31 +61,31 @@ class robot:
                     new_x = self.get_x() - 1
                 
                 # Check if the new position is within the table bounds
-                if self.TABLE.is_valid_position(new_x, new_y):
+                if self.TABLE.position_is_valid(new_x, new_y):
                     self.set_x(new_x)
                     self.set_y(new_y)
                 else:
                     print(f"Warning: Movement blocked. Would move to ({new_x}, {new_y}) which is off the table.")
 
             elif command == "LEFT":
-                current_index = self.DIRECTIONS.index(self.direction)                             
-                '''
-                current_index - The index of the current direction in the DIRECTIONS list
+                current_index = self.DIRECTIONS.index(self.direction)              
+                
+                # current_index - The index of the current direction in the DIRECTIONS list
 
-                NORTH = 0, EAST = 1, SOUTH = 2, WEST = 3
-                current_index - 1 - Subtract 1 to get the previous direction (left rotation)
+                # NORTH = 0, EAST = 1, SOUTH = 2, WEST = 3
+                # current_index - 1 - Subtract 1 to get the previous direction (left rotation)
 
-                If facing NORTH (0): 0 - 1 = -1
-                If facing EAST (1): 1 - 1 = 0
-                If facing SOUTH (2): 2 - 1 = 1
-                If facing WEST (3): 3 - 1 = 2
-                % 4 - The modulo operator wraps around when we go below 0
+                # If facing NORTH (0): 0 - 1 = -1
+                # If facing EAST (1): 1 - 1 = 0
+                # If facing SOUTH (2): 2 - 1 = 1
+                # If facing WEST (3): 3 - 1 = 2
+                # % 4 - The modulo operator wraps around when we go below 0
 
-                -1 % 4 = 3 (wraps to WEST)
-                0 % 4 = 0 (stays at NORTH)
-                1 % 4 = 1 (stays at EAST)
-                2 % 4 = 2 (stays at SOUTH)
-                '''
+                # -1 % 4 = 3 (wraps to WEST)
+                # 0 % 4 = 0 (stays at NORTH)
+                # 1 % 4 = 1 (stays at EAST)
+                # 2 % 4 = 2 (stays at SOUTH)
+                
                 self.set_direction(self.DIRECTIONS[(current_index - 1) % 4])
 
             elif command == "RIGHT":

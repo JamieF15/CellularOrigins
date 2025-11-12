@@ -1,0 +1,16 @@
+{
+    "robot_commands": [
+        {
+            "PLACE": {
+                "x": "1",
+                "y": "2",
+                "direction": "EAST"
+            }
+        },
+        "MOVE",
+        "MOVE",
+        "LEFT",
+        "MOVE",
+        "REPORT"
+    ]
+}

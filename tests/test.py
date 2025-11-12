@@ -1,15 +1,9 @@
 import unittest
 import sys
 import os
-import json
-
-# Add parent directory to path so we can import our modules
-parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, parent_dir)
 
 from robot import robot
 from table import table
-
 
 class TestRobotMovement(unittest.TestCase):
     """Test suite for robot movement commands"""
@@ -197,24 +191,24 @@ class TestTableBoundaries(unittest.TestCase):
     def test_table_min_coordinate(self):
         """Test table minimum coordinate is 0"""
         test_table = table()
-        self.assertTrue(test_table.is_valid_position(0, 0))
+        self.assertTrue(test_table.position_is_valid(0, 0))
     
     def test_table_max_coordinate(self):
         """Test table maximum coordinate is 5"""
         test_table = table()
-        self.assertTrue(test_table.is_valid_position(5, 5))
+        self.assertTrue(test_table.position_is_valid(5, 5))
     
     def test_table_below_minimum(self):
         """Test position below minimum is invalid"""
         test_table = table()
-        self.assertFalse(test_table.is_valid_position(-1, 0))
-        self.assertFalse(test_table.is_valid_position(0, -1))
+        self.assertFalse(test_table.position_is_valid(-1, 0))
+        self.assertFalse(test_table.position_is_valid(0, -1))
     
     def test_table_above_maximum(self):
         """Test position above maximum is invalid"""
         test_table = table()
-        self.assertFalse(test_table.is_valid_position(6, 5))
-        self.assertFalse(test_table.is_valid_position(5, 6))
+        self.assertFalse(test_table.position_is_valid(6, 5))
+        self.assertFalse(test_table.position_is_valid(5, 6))
 
 class TestRobotInitialization(unittest.TestCase):
     """Test suite for robot initialization"""

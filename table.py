@@ -4,7 +4,7 @@ class table:
         self.min_coord = 0
         self.max_coord = size
         
-    def is_valid_position(self, x, y):
+    def position_is_valid(self, x, y):
         """Check if a position is within table bounds when a 'move' command is issued."""
         return (self.min_coord <= x <= self.max_coord and 
                 self.min_coord <= y <= self.max_coord)

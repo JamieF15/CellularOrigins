@@ -55,21 +55,20 @@ def validate_config(config):
 
 def start():
     try:
-        with open('robot_conf.json', 'r') as f:
+        with open('robot_config.json', 'r') as f:
             config = json.load(f)
     except FileNotFoundError:
-        print("Error: robot_conf.json not found.")
+        print("Error: robot_config.json not found.")
         return
     except json.JSONDecodeError:
-        print("Error: Invalid JSON in robot_conf.json.")
+        print("Error: Invalid JSON in robot_config.json.")
         return
 
     if not validate_config(config):
-        print("Invalid configuration. Using defaults.")
+        print("Invalid configuration. Exiting.")
         return
 
-    robot_commands = config.get("robot_commands", [])
-    process_movement_commands(robot_commands)
+    process_movement_commands(config.get("robot_commands", []))
 
 def process_movement_commands(commands):
     robot_instance = None
