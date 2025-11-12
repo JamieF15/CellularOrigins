@@ -85,7 +85,6 @@ class robot:
                 # 0 % 4 = 0 (stays at NORTH)
                 # 1 % 4 = 1 (stays at EAST)
                 # 2 % 4 = 2 (stays at SOUTH)
-                
                 self.set_direction(self.DIRECTIONS[(current_index - 1) % 4])
 
             elif command == "RIGHT":
