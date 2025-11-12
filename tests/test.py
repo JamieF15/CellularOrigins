@@ -1,6 +1,4 @@
 import unittest
-import sys
-import os
 
 from robot import robot
 from table import table
