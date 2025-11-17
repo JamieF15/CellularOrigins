@@ -93,4 +93,3 @@ class robot:
 
             elif command == "REPORT":
                 self.report()
-
