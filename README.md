@@ -16,14 +16,15 @@ pip install jsonschema
 
 ### 2. Configuration File
 The script reads the file robot_config.json, which can be edited.
-The file is validated against a schema to ensure command correctness.
+The file is validated against a schema to ensure the command is correct.
 
 ### 3. Running the Simulator
 Run the main script:
 
-bash
-Copy code
+```bash 
 python main.py
+```
+
 With the included configuration file, the output should be:
 ```3, 3, NORTH```
 
