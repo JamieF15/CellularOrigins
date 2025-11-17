@@ -45,7 +45,6 @@ ROBOT_CONFIG_SCHEMA = {
 }
 
 def validate_config(config):
-    """Validate the robot configuration against the schema."""
     try:
         validate(instance=config, schema=ROBOT_CONFIG_SCHEMA)
         return True
